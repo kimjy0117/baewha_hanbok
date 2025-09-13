@@ -1,0 +1,625 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  padding-top: 80px;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--color-white);
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroBg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(44, 24, 16, 0.8) 0%,
+    rgba(139, 69, 19, 0.6) 50%,
+    rgba(44, 24, 16, 0.9) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  box-sizing: border-box;
+}
+
+/* Main Title */
+.mainTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.university {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.1;
+  margin: var(--spacing-sm) 0;
+}
+
+.koreanTitle {
+  font-family: var(--font-korean) !important;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.exhibition {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+}
+
+/* Description */
+.description {
+  max-width: 600px;
+  margin: var(--spacing-lg) 0;
+}
+
+.description p {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--color-white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* Exhibition Info */
+.exhibitionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.infoItem {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.infoItem::before {
+  content: "📍";
+  font-size: 1.2rem;
+}
+
+.infoItem:first-child::before {
+  content: "📅";
+}
+
+/* CTA Button */
+.ctaButton {
+  margin-top: var(--spacing-xl);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .page {
+    padding-top: 100px;
+  }
+  
+  .heroContent {
+    padding: var(--spacing-xxl);
+  }
+  
+  .university {
+    font-size: 1.4rem;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+  }
+  
+  .koreanTitle {
+    font-size: 3.5rem;
+  }
+  
+  .exhibition {
+    font-size: 1.3rem;
+  }
+  
+  .description p {
+    font-size: 1.2rem;
+  }
+  
+  .exhibitionInfo {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-xl);
+  }
+  
+  .infoItem {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 4rem;
+  }
+  
+  .koreanTitle {
+    font-size: 4rem;
+  }
+  
+  .description p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding-top: 80px; /* 모바일에서 헤더 높이 조정 */
+  }
+  
+  .heroContent {
+    padding: var(--spacing-sm); /* 모바일에서 더 작은 패딩 */
+  }
+  
+  .title {
+    font-size: 1.8rem; /* 모바일에서 더 작은 폰트 */
+    line-height: 1.2;
+  }
+  
+  .koreanTitle {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  .university {
+    font-size: 0.9rem;
+  }
+  
+  .exhibition {
+    font-size: 0.9rem;
+  }
+  
+  .description p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .exhibitionInfo {
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+  
+  .infoItem {
+    font-size: 0.85rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem; /* 모바일에서 섹션 제목 크기 조정 */
+  }
+}
+
+/* Section Styles */
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* About Section */
+.aboutSection {
+  padding: var(--spacing-xxl) 0;
+  background: var(--color-bg-light);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.aboutContent {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.aboutDescription {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.featureIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.feature h3 {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.feature p {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.aboutImage {
+  display: flex;
+  justify-content: center;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+}
+
+/* Works Section */
+.worksSection {
+  padding: var(--spacing-xxl) 0;
+  background: var(--color-white);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.galleryContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Desktop Layout: 4학년 왼쪽, 2학년 오른쪽 */
+@media (min-width: 768px) {
+  .galleryContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxl);
+  }
+  
+  .seniorGallery {
+    order: 1; /* 4학년을 왼쪽에 배치 */
+  }
+  
+  .sophomoreGallery {
+    order: 2; /* 2학년을 오른쪽에 배치 */
+  }
+}
+
+/* Mobile Layout: 4학년 위, 2학년 아래 */
+@media (max-width: 767px) {
+  .galleryContainer {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .seniorGallery {
+    order: 1; /* 4학년을 위에 배치 */
+  }
+  
+  .sophomoreGallery {
+    order: 2; /* 2학년을 아래에 배치 */
+  }
+}
+
+/* Schedule Section */
+.scheduleSection {
+  padding: var(--spacing-xxl) 0;
+  background: var(--color-bg-light);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.scheduleContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.scheduleCard {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.scheduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.scheduleDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.day {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.month {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.scheduleInfo h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.scheduleInfo p {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.scheduleInfo p:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact Section */
+.contactSection {
+  padding: var(--spacing-xxl) 0;
+  background: var(--color-white);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xxl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contactInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-bg-light);
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover {
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.contactIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contactItem h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.contactItem p {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contactMap {
+  display: flex;
+  justify-content: center;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive Design for Sections */
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 3rem;
+  }
+  
+  .aboutGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+  }
+  
+  
+  .scheduleContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactContent {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .contactInfo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scheduleContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+

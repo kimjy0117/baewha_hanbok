@@ -1,0 +1,24 @@
+---
+description: "React 프로젝트 폴더 구조 규칙"
+globs: ["src/**"]
+alwaysApply: true
+---
+
+# src 폴더 구조
+src/
+  assets/       # 이미지, 아이콘, 폰트 등 정적 리소스
+  components/   # 재사용 가능한 UI 컴포넌트 (버튼, 카드 등)
+    Button/
+      Button.jsx
+      Button.module.css
+  pages/        # 페이지 단위 컴포넌트 (라우팅 기준)
+    HomePage/
+      HomePage.jsx
+      HomePage.module.css
+  hooks/        # 커스텀 훅
+  context/      # Context API
+  services/     # API 호출 함수
+  utils/        # 유틸 함수
+  App.jsx       # 라우터 및 전체 구조
+  main.jsx      # 엔트리 포인트
+  styles/       # 전역 스타일, 테마
