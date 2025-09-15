@@ -31,7 +31,7 @@
   pointer-events: none;
 }
 
-.heroBg video {
+.heroImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -98,9 +98,9 @@
 
 .exhibition {
   font-family: var(--font-primary);
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color:rgba(255, 234, 0, 0.8);
   letter-spacing: 0.05em;
 }
 
@@ -506,7 +506,7 @@
 /* Contact Section */
 .contactSection {
   padding: var(--spacing-xxl) 0;
-  background: var(--color-white);
+  background:rgba(255, 255, 255, 0.6);
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
@@ -514,10 +514,10 @@
 }
 
 .contactContent {
-  display: grid;
+  display: flex;
+  justify-content: center;
   grid-template-columns: 1fr;
   gap: var(--spacing-xxl);
-  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -525,6 +525,14 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
+}
+
+/* Desktop: 연락처 아이템들을 가로로 배치 */
+@media (min-width: 768px) {
+  .contactInfo {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
 }
 
 .contactItem {
@@ -607,9 +615,6 @@
     grid-template-columns: 1fr 1fr;
   }
   
-  .contactInfo {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (min-width: 1024px) {
